@@ -17,7 +17,10 @@ const Room= require('./models/rooms');
 // ... rest of your code
 
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://hotel-booking-chi-hazel.vercel.app',
+  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
+}));
 app.use(express.json());
 // app.get('/api/room', async (req, res) => {
 //     try { 
